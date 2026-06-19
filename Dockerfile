@@ -1,16 +1,16 @@
 FROM ubuntu:latest
 
 RUN apt-get update && \
-    apt-get install apache2 unzip -y && \
-    rm -rf /var/www/html/index.html
+    apt-get install nginx unzip -y && \
+    rm -rf /var/www/html/index.nginx-debian.html
 
-ADD https://templatemo.com/download/templatemo_627_hyperluv_slideshow /var/www/html/templatemo_627_hyperluv_slideshow.zip
+ADD https://templatemo.com/download/templatemo_621_luminary /var/www/html
 
 WORKDIR /var/www/html
 
-RUN unzip templatemo_627_hyperluv_slideshow.zip && \
-    mv templatemo_627_hyperluv_slideshow/* /var/www/html/ 
+RUN unzip templatemo_621_luminary.zip && \
+    mv templatemo_621_luminary/* /var/wwww/html/
 
 EXPOSE 80
 
-CMD ["apache2ctl", "-D", "FOREGROUND"]
+CMD ["nginx", "-g", "daemon off;"]
