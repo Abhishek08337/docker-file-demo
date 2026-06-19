@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 RUN apt-get update && \
     apt-get install nginx unzip -y && \
-    rm -rf /var/www/html/index.nginx-debian.html
+    rm -rf /var/www/html/index.html
 
 ADD https://templatemo.com/download/templatemo_621_luminary /var/www/html
 
