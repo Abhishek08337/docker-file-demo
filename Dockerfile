@@ -6,7 +6,7 @@ RUN apt-get update && \
 
 ADD https://templatemo.com/download/templatemo_562_space_dynamic /var/www/html/templatemo_562_space_dynamic.zip
 
-WORKDIR /var/www/html/
+WORKDIR /var/www/html
 
 RUN unzip templatemo_562_space_dynamic.zip && \
     mv templatemo_562_space_dynamic/* /var/www/html/
