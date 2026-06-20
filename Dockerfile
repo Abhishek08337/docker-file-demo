@@ -1,16 +1,16 @@
 FROM ubuntu:latest
 
 RUN apt-get update && \
-    apt-get install nginx unzip -y && \
-    rm -rf /var/www/html/index.nginx-debian.html
+    apt-get apache2 unzip -y && \
+    rm -rf /var/www/html/index.html
 
-ADD https://templatemo.com/download/templatemo_621_luminary /var/www/html
+ADD https://templatemo.com/download/templatemo_562_space_dynamic /var/www/html/templatemo_562_space_dynamic.zip
 
-WORKDIR /var/www/html
+WORKDIR /var/www/html/
 
-RUN unzip templatemo_621_luminary.zip && \
-    mv templatemo_621_luminary/* /var/www/html/
+RUN unzip templatemo_562_space_dynamic.zip && \
+    mv templatemo_562_space_dynamic/* /var/www/html/
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["apache2ctl","-D","FOREGROUND"]
