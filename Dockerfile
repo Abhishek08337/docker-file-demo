@@ -9,7 +9,7 @@ ADD https://templatemo.com/download/templatemo_621_luminary /var/www/html
 WORKDIR /var/www/html
 
 RUN unzip templatemo_621_luminary.zip && \
-    mv templatemo_621_luminary/* /var/wwww/html/
+    mv templatemo_621_luminary/* /var/www/html/
 
 EXPOSE 80
 
